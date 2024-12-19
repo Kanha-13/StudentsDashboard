@@ -10,7 +10,6 @@ const Students = () => {
     loadStudents();
   }, []);
 
-  if (error) return <p>Error: {error}</p>;
   return (
     <div className='w-full h-[90%] bg-white flex flex-col rounded-xl p-2 px-4'>
       <StudentHeader />
