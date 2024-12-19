@@ -1,6 +1,5 @@
-import logo from '../assets/icons/logo.png'
-import dashboardIcon from '../assets/icons/dashboard.png'
-import { NavList } from '../const/sidebar';
+import logo from '../../assets/icons/logo.png'
+import { NavList } from '../../const/sidebar';
 import SiderBarCards from './SiderBarCards';
 const SideBar = () => {
   return (

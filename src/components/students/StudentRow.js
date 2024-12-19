@@ -1,7 +1,8 @@
-import { toddmonthyyyy, getTime } from "../utils/dateParser";
-import course1Icon from '../assets/images/course1.png'
-import course2Icon from '../assets/images/course2.png'
-const StudentRow = ({ student }) => {
+import { toddmonthyyyy, getTime } from "../../utils/dateParser";
+import course1Icon from '../../assets/images/course1.png'
+import course2Icon from '../../assets/images/course2.png'
+const defaultType = { name: "", cohort: "", courses: "", joinDate: "", lastLogin: "", status: "" }
+const StudentRow = ({ student = defaultType }) => {
   return (
     <tr className="text-xs">
       <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">{student.name}</td>
@@ -21,8 +22,8 @@ const StudentRow = ({ student }) => {
       <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">
         {
           student.status ?
-            <div class="m-auto w-4 h-4 bg-green-500 rounded-full"></div> :
-            <div class="m-auto w-4 h-4 bg-red-500 rounded-full"></div>
+            <div className="m-auto w-4 h-4 bg-green-500 rounded-full"></div> :
+            <div className="m-auto w-4 h-4 bg-red-500 rounded-full"></div>
         }
       </td>
     </tr>

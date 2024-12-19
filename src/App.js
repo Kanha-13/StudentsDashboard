@@ -1,7 +1,6 @@
-import Header from './components/Header';
-import SideBar from './components/Sidebar';
-import StudentList from './components/StudentList';
 import BaseLayout from './components/template/BaseLayout';
+
+// {containers / screens}
 import Students from './containers/Students';
 
 function App() {

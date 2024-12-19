@@ -1,18 +1,22 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchStudents } from '../redux/studentSlice';
-import StudentList from '../components/StudentList';
+import useStudents from '../redux/students/useStudent';
+import StudentHeader from '../components/students/StudentHeader';
+import StudentTable from '../components/students/StudentTable';
 
 const Students = () => {
-  const dispatch = useDispatch();
-  const { students, status, error } = useSelector((state) => state.students);
+  const { data, loading, error, loadStudents } = useStudents();
 
   useEffect(() => {
-    dispatch(fetchStudents());
-  }, [dispatch]);
+    loadStudents();
+  }, []);
+
+  if (error) return <p>Error: {error}</p>;
   return (
-    <StudentList students={students} />
-  )
+    <div className='w-full h-[90%] bg-white flex flex-col rounded-xl p-2 px-4'>
+      <StudentHeader />
+      <StudentTable students={data} loading={loading} error={error} />
+    </div>
+  );
 }
 
 export default Students; 

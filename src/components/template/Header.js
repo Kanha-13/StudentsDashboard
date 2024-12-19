@@ -1,9 +1,9 @@
-import helpIcon from '../assets/icons/help.png'
-import messagesIcon from '../assets/icons/messages.png'
-import settingstopIcon from '../assets/icons/settingstop.png'
-import notificationIcon from '../assets/icons/notification.png'
-import searchIcon from '../assets/icons/Search.png'
-import userImage from '../assets/images/user.png'
+import helpIcon from '../../assets/icons/help.png'
+import messagesIcon from '../../assets/icons/messages.png'
+import settingstopIcon from '../../assets/icons/settingstop.png'
+import notificationIcon from '../../assets/icons/notification.png'
+import searchIcon from '../../assets/icons/Search.png'
+import userImage from '../../assets/images/user.png'
 const Header = () => {
   return (
     <div className="flex justify-between items-center h-[10%] w-full">
@@ -20,11 +20,11 @@ const Header = () => {
           <div><img src={helpIcon} alt="help" /></div>
           <div className='relative'>
             <img src={messagesIcon} alt="messages" />
-            <span class="absolute -top-1.5 -right-2 block w-[11px] h-[11px] bg-red-500 rounded-full ring-2 ring-white"></span>
+            <span className="absolute -top-1.5 -right-2 block w-[11px] h-[11px] bg-red-500 rounded-full ring-2 ring-white"></span>
           </div>
           <div><img src={settingstopIcon} alt="settings" /></div>
           <div className='relative'>
-            <span class="absolute -top-1.5 -right-1 block w-[11px] h-[11px] bg-red-500 rounded-full ring-2 ring-white"></span>
+            <span className="absolute -top-1.5 -right-1 block w-[11px] h-[11px] bg-red-500 rounded-full ring-2 ring-white"></span>
             <img src={notificationIcon} alt="notifications" />
           </div>
         </div>

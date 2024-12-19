@@ -1,7 +1,9 @@
 import React from 'react'
 import StudentRow from './StudentRow';
+import TableSkeleton from '../skeletons/TableSkeleton';
+import ErrorDiv from '../Errors/ErrorDiv';
 
-const StudentTable = ({ students }) => {
+const StudentTable = ({ students = [], loading = true, error = false }) => {
   return (
     <div className='overflow-auto lg:overflow-hidden'>
       <table className='w-full'>
@@ -16,17 +18,9 @@ const StudentTable = ({ students }) => {
           </tr>
         </thead>
         <tbody className='divide-y-2 divide-gray-100'>
-          {
-            students.map((student, index) => <StudentRow key={student.name + index} student={student} />)
-          }
-          {
-            students.map((student, index) => <StudentRow key={student.name + index} student={student} />)
-          }
-          {
-            students.map((student, index) => <StudentRow key={student.name + index} student={student} />)
-          }
-          {
-            students.map((student, index) => <StudentRow key={student.name + index} student={student} />)
+          {error ? <ErrorDiv message={"Error fetching students"} /> :
+            loading ? <TableSkeleton rows={6} cells={6} /> :
+              students.map((student, index) => <StudentRow key={student.name + index} student={student} />)
           }
         </tbody>
       </table>

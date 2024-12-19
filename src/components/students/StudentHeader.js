@@ -1,5 +1,5 @@
-import downIcon from '../assets/icons/down.png'
-import addIcon from '../assets/icons/add.png'
+import downIcon from '../../assets/icons/down.png'
+import addIcon from '../../assets/icons/add.png'
 const StudentHeader = () => {
   return (
     <div className="h-15 pt-2 flex w-full mb-9 items-center justify-between">

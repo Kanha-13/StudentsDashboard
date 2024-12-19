@@ -1,6 +1,6 @@
 import React from 'react'
-import SideBar from '../Sidebar';
-import Header from '../Header';
+import SideBar from './Sidebar';
+import Header from './Header';
 
 const BaseLayout = ({children}) => {
   return (
