@@ -5,7 +5,7 @@ import ErrorDiv from '../Errors/ErrorDiv';
 
 const StudentTable = ({ students = [], loading = true, error = false }) => {
   return (
-    <div className='overflow-auto lg:overflow-hidden'>
+    <div className='overflow-auto'>
       <table className='w-full'>
         <thead className='border-b-2 border-gray-100'>
           <tr className="text-xs">
