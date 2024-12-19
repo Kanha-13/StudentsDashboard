@@ -33,7 +33,7 @@ const Header = () => {
           </div>
         </div>
         <div className='flex flex-grow items-center justify-end'>
-          <div className='sm:mr-6'><img src={userImage} alt="profile-picture" /></div>
+          <div className='cursor-pointer sm:mr-6'><img src={userImage} alt="profile-picture" /></div>
           <div className='hidden xl:block font-semibold text-userName font-notoSans text-lg'>Adeline H. Dancy</div>
         </div>
       </div>
