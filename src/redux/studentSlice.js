@@ -4,7 +4,6 @@ export const fetchStudents = createAsyncThunk('students/fetchStudents', async ()
   const response = await fetch('http://localhost:5000/api/students');
   if (!response.ok) throw new Error('Failed to fetch student data');
   const data = await response.json();
-  console.log(data)
   return data;
 });
 

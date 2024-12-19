@@ -1,16 +1,15 @@
 import Header from './components/Header';
 import SideBar from './components/Sidebar';
 import StudentList from './components/StudentList';
+import BaseLayout from './components/template/BaseLayout';
+import Students from './containers/Students';
 
 function App() {
   return (
-    <div className="flex bg-gray-100">
-      <SideBar />
-      <div className="flex flex-col w-[80%] h-screen pl-6">
-        <Header />
-        <StudentList />
-      </div>
-    </div>
+    <BaseLayout>
+      {/* wrapping different screens with base layout */}
+      <Students />
+    </BaseLayout>
   );
 }
 

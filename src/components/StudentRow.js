@@ -1,21 +1,29 @@
+import { toddmonthyyyy, getTime } from "../utils/dateParser";
+import course1Icon from '../assets/images/course1.png'
+import course2Icon from '../assets/images/course2.png'
 const StudentRow = ({ student }) => {
   return (
-    <tr>
-      <td class="py-2 px-4">{student.name}</td>
-      <td class="py-2 px-4">{student.cohort}</td>
-      {student.courses.split(",").map((course, index) => {
-        return (
-          <td class="py-2 px-4">
-            <span class="bg-grey-500 text-black rounded-full px-2">{course}</span>
-          </td>
-        )
-      })}
-      <td class="py-2 px-4">{student.joinDate}</td>
-      <td class="py-2 px-4">{student.lastLogin}</td>
-      <td class="py-2 px-4">
-        <span class="text-green-500">
-          <i class="fas fa-circle"></i>
-        </span>
+    <tr className="text-xs">
+      <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">{student.name}</td>
+      <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">{student.cohort}</td>
+      <td className="whitespace-nowrap p-2 pl-0 text=[12px] flex flex-wrap">
+        {student.courses.split(",").map((course, index) => {
+          return (
+            <div key={student.name + course + index} className="bg-gray-100 rounded-md py-1 px-2 mr-2 inline-flex items-center justify-center">
+              <img src={index ? course2Icon : course1Icon} />
+              <span className="bg-grey-500 text-black rounded-full px-2 font-[500]">{course}</span>
+            </div>
+          )
+        })}
+      </td>
+      <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">{toddmonthyyyy(student.joinDate)}</td>
+      <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">{toddmonthyyyy(student.lastLogin)} {getTime(student.lastLogin)}</td>
+      <td className="whitespace-nowrap p-2 pl-0 text=[12px] ">
+        {
+          student.status ?
+            <div class="m-auto w-4 h-4 bg-green-500 rounded-full"></div> :
+            <div class="m-auto w-4 h-4 bg-red-500 rounded-full"></div>
+        }
       </td>
     </tr>
   )
