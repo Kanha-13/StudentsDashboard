@@ -6,19 +6,15 @@ import Modal from '../components/Modal/Modal';
 import StudentForm from '../components/students/StudentForm';
 
 const Students = () => {
-  const { data, loading, error, loadStudents } = useStudents();
+  const { students, loading, error, loadStudents, addStudent } = useStudents();
   const [isAddOpen, setAddOpen] = useState(false);
 
   const openAddForm = () => {
     setAddOpen((state) => !state)
   }
 
-  const handleAddStudent = (data) =>{
-    try {
-      
-    } catch (error) {
-      
-    }
+  const handleAddStudent = async (data) => {
+    await addStudent(data);
   }
 
   useEffect(() => {
@@ -28,9 +24,9 @@ const Students = () => {
   return (
     <div className='w-full h-[90%] bg-white flex flex-col rounded-xl p-2 px-4'>
       <StudentHeader onAdd={openAddForm} />
-      <StudentTable students={data} loading={loading} error={error} />
+      <StudentTable students={students} loading={loading} error={error} />
       {isAddOpen ? <Modal onClose={openAddForm}>
-        <StudentForm mode='add' onclose={()=>openAddForm(false)} onsave={handleAddStudent} />
+        <StudentForm error={error} mode='add' onclose={() => openAddForm(false)} onsave={handleAddStudent} />
       </Modal> : <></>
       }
     </div>

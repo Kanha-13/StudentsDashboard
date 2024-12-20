@@ -10,17 +10,17 @@ export const getStudent = async (id) => {
   return response.data;
 };
 
-export const createStudent = async (userData) => {
-  const response = await api.post('/user', userData);
+export const createStudent = async (studentData) => {
+  const response = await api.post('/students', studentData);
   return response.data;
 };
 
-export const updateStudent = async (userData) => {
-  const response = await api.patch('/user', userData);
+export const updateStudent = async (studentData) => {
+  const response = await api.patch(`/students/${studentData.id}`, studentData);
   return response.data;
 };
 
-export const deleteStudent = async (userData) => {
-  const response = await api.delete('/user', userData);
+export const deleteStudent = async (id) => {
+  const response = await api.delete(`/students/${id}`);
   return response.data;
 };

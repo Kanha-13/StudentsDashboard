@@ -3,8 +3,9 @@ import CustomInput from '../Input/CustomInput';
 import { StudentInputFields, courseOptions } from '../../const/StudentForm';
 import MultiSelectInput from '../Input/MultiSelect';
 import CustomButton from '../Buttons/CustomButton';
+import ErrorDiv from '../Errors/ErrorDiv';
 
-const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose }) => {
+const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose, error }) => {
   const [studentInfo, setStudentInfo] = useState({
     studentName: "",
     cohort: "",
@@ -53,9 +54,9 @@ const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose }
 
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(studentInfo)
-  },[studentInfo])
+  }, [studentInfo])
 
   return (
     <div className="w-full h-full flex flex-col justify-between">
@@ -87,6 +88,7 @@ const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose }
         <CustomButton onclick={handleCancel} color="gray-700" title='Cancel' bg={'gray-300'} hoverBg={'gray-500'} />
         <CustomButton onclick={handleAction} color="white" title={getButtonText()} bg={getBg()} hoverBg={getHoverBg()} />
       </div>
+      {error ? <ErrorDiv message={"Error fetching students"} /> : <></>}
     </div>
   );
 };
