@@ -12,7 +12,7 @@ module.exports = {
         userName:"#05162E"
       },
       fontFamily: {
-        notoSans: ['NotoSans', 'sans-serif'], // Add your custom font
+        notoSans: ['NotoSans', 'sans-serif'],
       }
     },
   },
