@@ -102,7 +102,8 @@ The entire application is styled using **Tailwind CSS**:
 ## **Setup Instructions**
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Kanha-13/StudentsDashboard.git
+   StudentsDashboard
    ```
 2. Navigate to the project folder and create a `.env` file in the root directory.
 3. Copy the variables from `.env.example` and update them:
