@@ -16,6 +16,8 @@ The application is fully responsive, ensuring a seamless experience across devic
 
 You can access the live version of the app here: [Student Dashboard Web App](https://studentdashboard-rho.vercel.app/students)
 
+---
+
 ## **Technologies Used**
 The application is built using the following technologies:
 
