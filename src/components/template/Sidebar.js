@@ -10,7 +10,7 @@ const SideBar = ({ visible, onclose }) => {
     onclose();
   }
   return (
-    <div className={`h-screen bg-white shadow-sm ${visible ? getMobileDesign() : "hidden"} lg:w-[17%] lg:block`}>
+    <div className={`h-screen bg-white lg:shadow-sm ${visible ? getMobileDesign() : "hidden"} lg:w-[17%] lg:block`}>
       <div className="p-4 mt-5">
         <img src={logo} alt="Logo" />
       </div>
