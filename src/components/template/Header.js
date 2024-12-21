@@ -4,11 +4,11 @@ import settingstopIcon from '../../assets/icons/settingstop.png'
 import notificationIcon from '../../assets/icons/notification.png'
 import searchIcon from '../../assets/icons/Search.png'
 import userImage from '../../assets/images/user.png'
-const Header = () => {
+const Header = ({ onOpen }) => {
   return (
     <div className="flex justify-between items-center h-[10%] w-full">
-      <div className='flex lg:hidden'>
-        <div className='cursor-pointer text-4xl -mt-2'>&equiv;</div>
+      <div onClick={onOpen} className='flex lg:hidden'>
+        <div className='cursor-pointer text-4xl -mt-2 mr-4'>&equiv;</div>
       </div>
       <div className='flex bg-white px-5 items-center h-[60%] rounded-xl p-2 w-2/3 sm:w-3/4 md:w-[58%]'>
         <img className='mr-2' src={searchIcon} alt="search" />

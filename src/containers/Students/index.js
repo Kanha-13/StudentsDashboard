@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import useStudents from '../redux/students/useStudent';
-import StudentHeader from '../components/students/StudentHeader';
-import StudentTable from '../components/students/StudentTable';
-import Modal from '../components/Modal/Modal';
-import StudentForm from '../components/students/StudentForm';
-import SimpleLoading from '../components/Loading/SimpleLoading';
-import ErrorDiv from '../components/Errors/ErrorDiv';
+import useStudents from '../../redux/students/useStudent';
+import StudentHeader from '../../components/students/StudentHeader';
+import StudentTable from '../../components/students/StudentTable';
+import Modal from '../../components/Modal/Modal';
+import StudentForm from '../../components/students/StudentForm';
+import SimpleLoading from '../../components/Loading/SimpleLoading';
+import ErrorDiv from '../../components/Errors/ErrorDiv';
 
 const Students = () => {
   const { students, loading, error, loadStudents, addStudent, updateStudentDetails, deleteStudentDetails } = useStudents();
@@ -48,10 +48,6 @@ const Students = () => {
   useEffect(() => {
     loadStudents();
   }, []);
-
-  useEffect(() => {
-    console.log(error)
-  }, [error])
 
   return (
     <div className='w-full h-[90%] bg-white flex flex-col rounded-xl p-2 px-4'>
