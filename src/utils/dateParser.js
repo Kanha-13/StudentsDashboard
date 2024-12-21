@@ -8,3 +8,11 @@ export const toddmonthyyyy = (date) => {
 export const getTime = (date) => {
   return new Date(date).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
 }
+
+export const parseISODate = (isoDate) => {
+  return isoDate.split("T")[0];
+}
+
+export const parseISOWithTime = (isoDate) => {
+  return isoDate.split("T")[0] + "T" + new Date(isoDate).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+}

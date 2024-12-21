@@ -3,7 +3,7 @@ import StudentRow from './StudentRow';
 import TableSkeleton from '../skeletons/TableSkeleton';
 import ErrorDiv from '../Errors/ErrorDiv';
 
-const StudentTable = ({ students = [], loading = true, error = false }) => {
+const StudentTable = ({ students = [], openstudent, loading = true, error = false }) => {
   return (
     <div className='overflow-auto'>
       <table className='w-full'>
@@ -20,7 +20,7 @@ const StudentTable = ({ students = [], loading = true, error = false }) => {
         <tbody className='divide-y-2 divide-gray-100'>
           {error ? <ErrorDiv message={"Error fetching students"} /> :
             loading ? <TableSkeleton rows={6} cells={6} /> :
-              students.map((student, index) => <StudentRow key={student.studentName + index} student={student} />)
+              students.map((student, index) => <StudentRow index={index} openstudent={openstudent} key={student.studentName + index} student={student} />)
           }
         </tbody>
       </table>

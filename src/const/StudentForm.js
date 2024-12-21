@@ -3,7 +3,7 @@ export const StudentInputFields = [
   { title: "Cohort", name: "cohort", placeText: "eg. AY 2024-25", type: "text" },
   { title: "Joining Date", name: "joinDate", placeText: "", type: "date" },
   { title: "Last Login", name: "lastLogin", placeText: "", type: "datetime-local" },
-  { title: "Status", name: "status", placeText: "Select status", options: [{ key: 1, title: "Active" }, { key: 0, title: "In Active" }], type: "select" }
+  { title: "Status", name: "status", placeText: "Select status", options: [{ key: true, title: "Active" }, { key: false, title: "In Active" }], type: "select" }
 ]
 
 export const courseOptions = [
