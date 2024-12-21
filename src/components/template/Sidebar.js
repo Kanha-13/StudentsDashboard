@@ -14,7 +14,7 @@ const SideBar = ({ visible, onclose }) => {
       <div className="p-4 mt-5">
         <img src={logo} alt="Logo" />
       </div>
-      <div onClick={handleSideBar} className='cursor-pointer absolute right-7 top-7 font-semibold text-2xl'>x</div>
+      {visible?<div onClick={handleSideBar} className='cursor-pointer absolute right-7 top-7 font-semibold text-2xl'>x</div>:<></>}
       <nav className="w-full mt-4">
         <div className='w-full'>
           {NavList.map((nav, index) => <SiderBarCards onclick={handleSideBar} key={index + 'navlist'} {...nav} />)}
