@@ -86,7 +86,7 @@ const StudentForm = ({ title = "Student Detail", mode = 'add', studentData, onsa
         <CustomButton onclick={handleAction} color="white" title={getButtonText()} bg={'bg-blue-800'} hoverBg={'hover:bg-blue-900'} />
         {mode !== "add" ? <CustomButton onclick={handleDelete} color="white" title='Delete' bg={'bg-red-500'} hoverBg={'hover:bg-red-600'} /> : <></>}
       </div>
-      {error ? <ErrorDiv message={"Error fetching students"} /> : <></>}
+      {error ? <ErrorDiv message={`${error}`} /> : <></>}
     </div>
   );
 };

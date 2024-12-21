@@ -55,7 +55,7 @@ const MultiSelectInput = ({ options, title, value, onchange, placeText, name }) 
   }, [value[name]])
 
   return (
-    <div className="w-full md:w-[40%] lg:w-1/4 h-14 m-2 lg:m-6 relative">
+    <div className="mt-4 sm:mt-2 w-full md:w-[40%] lg:w-1/4 h-14 m-2 lg:m-6 relative">
       <div className="font-notoSans absolute -top-3.5 px-1 left-3 bg-white text-studentTableHeaderText">{title}</div>
       <div className="border-2 p-2 rounded-lg border-gray-200 focus-within:border-blue-500">
         <div className="mt-1 flex flex-wrap items-center gap-2 h-full overflow-auto max-h-32">
