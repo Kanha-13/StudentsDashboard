@@ -20,7 +20,7 @@ const StudentTable = ({ students = [], loading = true, error = false }) => {
         <tbody className='divide-y-2 divide-gray-100'>
           {error ? <ErrorDiv message={"Error fetching students"} /> :
             loading ? <TableSkeleton rows={6} cells={6} /> :
-              students.map((student, index) => <StudentRow key={student.name + index} student={student} />)
+              students.map((student, index) => <StudentRow key={student.studentName + index} student={student} />)
           }
         </tbody>
       </table>

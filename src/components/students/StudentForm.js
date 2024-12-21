@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CustomInput from '../Input/CustomInput';
 import { StudentInputFields, courseOptions } from '../../const/StudentForm';
 import MultiSelectInput from '../Input/MultiSelect';
@@ -44,19 +44,15 @@ const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose, 
 
   const getBg = () => {
     return mode === 'delete'
-      ? 'red-500'
-      : 'blue-700'
+      ? 'bg-red-500'
+      : 'bg-blue-800'
   }
   const getHoverBg = () => {
     return mode === 'delete'
-      ? 'red-600'
-      : 'blue-800'
+      ? 'hover:bg-red-600'
+      : 'hover:bg-blue-900'
 
   }
-
-  useEffect(() => {
-    console.log(studentInfo)
-  }, [studentInfo])
 
   return (
     <div className="w-full h-full flex flex-col justify-between">
@@ -67,7 +63,7 @@ const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose, 
         <div className="flex flex-wrap mt-5">
           {StudentInputFields.map((field, index) => (
             <CustomInput
-              key={index}
+              key={index+"-student-form-field"}
               value={studentInfo}
               onchange={handleInputs}
               {...field}
@@ -85,7 +81,7 @@ const StudentForm = ({ title = "Student Detail", mode = 'add', onsave, onclose, 
       </div>
 
       <div className="flex justify-end gap-4 mt-8 p-4">
-        <CustomButton onclick={handleCancel} color="gray-700" title='Cancel' bg={'gray-300'} hoverBg={'gray-500'} />
+        <CustomButton onclick={handleCancel} color="gray-700" title='Cancel' bg={'bg-gray-300'} hoverBg={'hover:bg-gray-400'} />
         <CustomButton onclick={handleAction} color="white" title={getButtonText()} bg={getBg()} hoverBg={getHoverBg()} />
       </div>
       {error ? <ErrorDiv message={"Error fetching students"} /> : <></>}

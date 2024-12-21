@@ -61,7 +61,7 @@ const MultiSelectInput = ({ options, title, value, onchange, placeText, name }) 
         <div className="mt-1 flex flex-wrap items-center gap-2 h-full overflow-auto max-h-32">
           {selectedOptions.map((optionKey, index) => (
             <div
-              key={index}
+              key={index + optionKey+"-selected-course"}
               className="flex items-center bg-studentTableHeaderText text-white px-3 py-1 rounded-full"
             >
               <span>{options.find((opt) => opt.key === optionKey)?.title}</span>

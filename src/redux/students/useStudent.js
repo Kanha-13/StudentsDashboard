@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { 
-  fetchStudentsStart, 
-  fetchStudentsSuccess, 
-  fetchStudentsFailure, 
-  createStudentStart, 
-  createStudentSuccess, 
-  createStudentFailure, 
-  updateStudentStart, 
-  updateStudentSuccess, 
-  updateStudentFailure, 
-  deleteStudentStart, 
-  deleteStudentSuccess, 
-  deleteStudentFailure 
+import {
+  fetchStudentsStart,
+  fetchStudentsSuccess,
+  fetchStudentsFailure,
+  createStudentStart,
+  createStudentSuccess,
+  createStudentFailure,
+  updateStudentStart,
+  updateStudentSuccess,
+  updateStudentFailure,
+  deleteStudentStart,
+  deleteStudentSuccess,
+  deleteStudentFailure
 } from './studentSlice';
 import { getStudents, createStudent, updateStudent, deleteStudent } from './studentServices';
 
@@ -19,7 +19,6 @@ const useStudents = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.students);
 
-  // Load students (GET request)
   const loadStudents = async () => {
     dispatch(fetchStudentsStart());
 
@@ -31,10 +30,8 @@ const useStudents = () => {
     }
   };
 
-  // Create a student (POST request)
   const addStudent = async (studentData) => {
     dispatch(createStudentStart());
-
     try {
       const newStudent = await createStudent(studentData);
       dispatch(createStudentSuccess(newStudent));
@@ -43,7 +40,6 @@ const useStudents = () => {
     }
   };
 
-  // Update a student (PUT request)
   const updateStudentDetails = async (studentData) => {
     dispatch(updateStudentStart());
 
@@ -55,7 +51,6 @@ const useStudents = () => {
     }
   };
 
-  // Delete a student (DELETE request)
   const deleteStudentDetails = async (studentId) => {
     dispatch(deleteStudentStart());
 
@@ -67,14 +62,14 @@ const useStudents = () => {
     }
   };
 
-  return { 
-    data, 
-    loading, 
-    error, 
-    loadStudents, 
-    addStudent, 
-    updateStudentDetails, 
-    deleteStudentDetails 
+  return {
+    students: data,
+    loading,
+    error,
+    loadStudents,
+    addStudent,
+    updateStudentDetails,
+    deleteStudentDetails
   };
 };
 

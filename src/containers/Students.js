@@ -15,6 +15,7 @@ const Students = () => {
 
   const handleAddStudent = async (data) => {
     await addStudent(data);
+    setAddOpen(false);
   }
 
   useEffect(() => {
