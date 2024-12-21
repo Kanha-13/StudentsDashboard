@@ -1,4 +1,3 @@
----
 
 # **Student Dashboard Frontend Application**
 
